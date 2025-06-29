@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lời Tỏ Tình ❤️</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fce4ec; /* Màu hồng phấn đáng yêu */
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            overflow: hidden; /* Ngăn cuộn trang khi nút chạy */
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #e91e63; /* Màu hồng đậm */
+            font-size: 24px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        #yesBtn {
+            background-color: #4CAF50; /* Màu xanh lá */
+        }
+
+        #yesBtn:hover {
+            transform: scale(1.1);
+        }
+
+        #noBtn {
+            background-color: #f44336; /* Màu đỏ */
+            position: absolute; /* Chìa khoá của sự "chạy trốn" */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Cậu làm người yêu tớ nhé? 😉</h1>
+        <div class="buttons">
+            <button id="yesBtn" onclick="handleYesClick()">Tớ đồng ý ❤️</button>
+            <button id="noBtn" onmouseover="handleNoMouseOver()" onclick="handleNoMouseOver()">Không đời nào!</button>
+        </div>
+    </div>
+
+    <script>
+        const noBtn = document.getElementById('noBtn');
+        const yesBtn = document.getElementById('yesBtn');
+
+        function handleNoMouseOver() {
+            // Lấy kích thước của cửa sổ trình duyệt
+            const maxWidth = window.innerWidth - noBtn.offsetWidth;
+            const maxHeight = window.innerHeight - noBtn.offsetHeight;
+
+            // Tạo vị trí ngẫu nhiên
+            const randomX = Math.floor(Math.random() * maxWidth);
+            const randomY = Math.floor(Math.random() * maxHeight);
+
+            // Di chuyển nút "Từ chối"
+            noBtn.style.left = randomX + 'px';
+            noBtn.style.top = randomY + 'px';
+        }
+
+        function handleYesClick() {
+            // BẠN CÓ THỂ THAY ĐỔI LỜI CẢM ƠN Ở ĐÂY
+            alert("Yêu cậu nhiều lắm! <3");
+            
+            // Làm cho nút "Đồng ý" to ra và nút "Từ chối" biến mất
+            yesBtn.style.transform = 'scale(1.5)';
+            noBtn.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
